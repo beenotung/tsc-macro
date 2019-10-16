@@ -38,7 +38,7 @@
   ],
   "dependencies": {
     "@beenotung/tslib": "^14.38.0",
-    "ts-eval": "^1.0.4"
+    "typescript": "^3.6.4"
   },
   "devDependencies": {
     "@types/node": "*",
@@ -48,7 +48,6 @@
     "ts-node": "^8.4.1",
     "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.6.4"
+    "tslint-eslint-rules": "^5.4.0"
   }
 }
