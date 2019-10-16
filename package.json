@@ -34,7 +34,8 @@
     "dist"
   ],
   "dependencies": {
-    "@beenotung/tslib": "^14.37.1"
+    "@beenotung/tslib": "^14.38.0",
+    "ts-eval": "^1.0.4"
   },
   "devDependencies": {
     "@types/node": "*",
