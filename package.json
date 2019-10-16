@@ -1,13 +1,9 @@
 {
   "name": "tsc-macro",
   "version": "0.0.1",
-  "description": "",
+  "description": "Compose macro in Typescript, expand back into Typescript",
   "keywords": [],
-  "author": {
-    "name": "Beeno Tung",
-    "email": "aabbcc1241@yahoo.com.hk",
-    "url": "https://beeno-tung.surge.sh"
-  },
+  "author": "Beeno Tung <aabbcc1241@yahoo.com.hk> (https://beeno-tung.surge.sh)",
   "license": "BSD-2-Clause",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -31,6 +27,7 @@
     }
   },
   "directories": {
+    "example": "examples",
     "test": "test"
   },
   "files": [
@@ -49,5 +46,13 @@
     "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-eslint-rules": "^5.4.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beenotung/tsc-macro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/beenotung/tsc-macro/issues"
+  },
+  "homepage": "https://github.com/beenotung/tsc-macro#readme"
 }

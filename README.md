@@ -1,7 +1,7 @@
 # tsc-macro
-[![npm Package Version](https://img.shields.io/npm/v/tsc-macro.svg?maxAge=2592000)](https://www.npmjs.com/package/tsc-macro)
+Compose macro in Typescript, expand back into Typescript
 
-Compose macro in Typescript, expand back into Typescript.
+[![npm Package Version](https://img.shields.io/npm/v/tsc-macro.svg?maxAge=2592000)](https://www.npmjs.com/package/tsc-macro)
 
 ## Example
 Source file: foo.macro.ts
