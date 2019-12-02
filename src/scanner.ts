@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as ts from 'typescript';
 
-export function scanSync(entryPath: string) {
+export function scanSync(entryPath: string, ext: string) {
   return scanRecursivelySync({
     entryPath,
     dereferenceSymbolicLinks: true,
@@ -14,7 +14,7 @@ export function scanSync(entryPath: string) {
         return;
       }
       console.log('expanding', inFilename);
-      const outBasename = inBasename.replace(/\.macro\.ts$/, '.ts');
+      const outBasename = inBasename.replace(/\.macro\.ts$/, ext);
       const outFilename = path.join(path.dirname(inFilename), outBasename);
       const inText = fs.readFileSync(inFilename).toString();
       const outText = eval(ts.transpile(inText));
