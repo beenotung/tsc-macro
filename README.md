@@ -37,3 +37,7 @@ tsc-macro
 ## recursively in given directory
 tsc-macro src/models
 ```
+
+## License
+This is a Free and Open Source Software (FOSS) licensed under
+[BSD-2-Clause](./LICENSE)
