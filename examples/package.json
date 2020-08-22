@@ -1,0 +1,25 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc-macro",
+    "pretest": "npm run build",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tsc-macro": "file:..",
+    "tslib": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.4",
+    "@types/node": "^14.6.0",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.2",
+    "typescript": "^3.7.3"
+  }
+}

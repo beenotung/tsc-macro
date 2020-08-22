@@ -3,20 +3,26 @@ Compose macro in Typescript, expand back into Typescript
 
 [![npm Package Version](https://img.shields.io/npm/v/tsc-macro.svg?maxAge=2592000)](https://www.npmjs.com/package/tsc-macro)
 
+## How it works
+
+tsc-macro evaluates each `[name].macro.ts` file and save the result to corresponding `[name].ts`
+
 ## Example
-Source file: foo.macro.ts
+Source file: fruit.macro.ts
 ```typescript
 import { genEnum } from 'tsc-macro/helpers/enum'
 
 genEnum('fruit', ['apple', 'orange']);
 ```
-Generated file: foo.ts
+Generated file: fruit.ts
 ```typescript
 export enum fruit {
   apple,
   orange,
 }
 ```
+
+[More Examples](./examples)
 
 ## Installation
 ```bash
