@@ -17,6 +17,7 @@ export function scanSync(entryPath: string, ext: string) {
       const outBasename = inBasename.replace(/\.macro\.ts$/, ext);
       const outFilename = path.join(path.dirname(inFilename), outBasename);
       const inText = fs.readFileSync(inFilename).toString();
+      /* tslint:disable-next-line no-eval */
       const outText = eval(ts.transpile(inText));
       fs.writeFileSync(outFilename, outText);
     },
