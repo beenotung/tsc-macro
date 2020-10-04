@@ -1,6 +1,6 @@
 {
   "name": "tsc-macro",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Compose macro in Typescript, expand back into Typescript",
   "keywords": [],
   "author": "Beeno Tung <aabbcc1241@yahoo.com.hk> (https://beeno-tung.surge.sh)",
