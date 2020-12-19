@@ -34,7 +34,7 @@
     "dist"
   ],
   "dependencies": {
-    "@beenotung/tslib": "^14.38.0",
+    "@beenotung/tslib": "^16.39.0",
     "typescript": "^3.6.4"
   },
   "devDependencies": {
