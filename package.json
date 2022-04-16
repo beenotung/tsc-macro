@@ -10,11 +10,26 @@
   ],
   "author": "Beeno Tung <aabbcc1241@yahoo.com.hk> (https://beeno-tung.surge.sh)",
   "license": "BSD-2-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beenotung/tsc-macro.git"
+  },
+  "homepage": "https://github.com/beenotung/tsc-macro#readme",
+  "bugs": {
+    "url": "https://github.com/beenotung/tsc-macro/issues"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
     "tsc-macro": "dist/cli.js"
   },
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "rimraf node_modules/@beenotung/tslib/index.* dist",
     "format": "run-s format:*",
@@ -24,18 +39,6 @@
     "test": "tsc -p . --noEmit",
     "prepublishOnly": "npm run build"
   },
-  "husky": {
-    "hook": {
-      "pre-commit": "npm run format"
-    }
-  },
-  "directories": {
-    "example": "examples",
-    "test": "test"
-  },
-  "files": [
-    "dist"
-  ],
   "dependencies": {
     "@beenotung/tslib": "^19.0.0",
     "typescript": "^4.6.3"
@@ -49,12 +52,9 @@
     "rimraf": "^3.0.2",
     "ts-node": "^10.7.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/beenotung/tsc-macro.git"
-  },
-  "bugs": {
-    "url": "https://github.com/beenotung/tsc-macro/issues"
-  },
-  "homepage": "https://github.com/beenotung/tsc-macro#readme"
+  "husky": {
+    "hook": {
+      "pre-commit": "npm run format"
+    }
+  }
 }
