@@ -2,7 +2,12 @@
   "name": "tsc-macro",
   "version": "0.1.3",
   "description": "Compose macro in Typescript, expand back into Typescript",
-  "keywords": [],
+  "keywords": [
+    "typescript",
+    "macro",
+    "code generation",
+    "cli tool"
+  ],
   "author": "Beeno Tung <aabbcc1241@yahoo.com.hk> (https://beeno-tung.surge.sh)",
   "license": "BSD-2-Clause",
   "main": "dist/index.js",
