@@ -11,15 +11,13 @@
     "tsc-macro": "dist/cli.js"
   },
   "scripts": {
-    "test": "npm run rawtest",
     "clean": "rimraf node_modules/@beenotung/tslib/index.* dist",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "postformat": "tslint -p . --fix",
-    "prebuild": "npm run clean",
-    "build": "tsc",
-    "pretest": "npm run format && npm run build",
-    "rawtest": "ts-node test/index.ts",
-    "prepublishOnly": "npm run rawtest && npm run build"
+    "format": "run-s format:*",
+    "format:prettier": "prettier --write src examples",
+    "format:json": "format-json-cli",
+    "build": "npm run clean && tsc -p .",
+    "test": "tsc -p . --noEmit",
+    "prepublishOnly": "npm run build"
   },
   "husky": {
     "hook": {
@@ -34,18 +32,17 @@
     "dist"
   ],
   "dependencies": {
-    "@beenotung/tslib": "^16.39.0",
-    "typescript": "^3.6.4"
+    "@beenotung/tslib": "^19.0.0",
+    "typescript": "^4.6.3"
   },
   "devDependencies": {
     "@types/node": "*",
-    "husky": "^3.0.9",
-    "prettier": "^1.18.2",
-    "rimraf": "^3.0.0",
-    "ts-node": "^8.4.1",
-    "tslint": "^5.20.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-eslint-rules": "^5.4.0"
+    "format-json-cli": "^1.0.1",
+    "husky": "^7.0.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.7.0"
   },
   "repository": {
     "type": "git",

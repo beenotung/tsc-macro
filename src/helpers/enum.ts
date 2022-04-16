@@ -1,6 +1,5 @@
-export function genEnum(name: string, xs: string[]) {
-  // prettier-ignore
-  return `export enum ${name} {${xs.map(x => `
-  ${x},`).join('')}
-}`;
+export function genEnum(name: string, values: string[]): string {
+  return `
+export enum ${name} {${values.map((value) => `\n  ${value},`).join('')}
+}`.trim()
 }

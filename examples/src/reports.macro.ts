@@ -1,8 +1,10 @@
+import { genUnionType, genArray } from 'tsc-macro'
+
 function extract(s: string): string[] {
   return s
     .split('\n')
-    .map(s => s.trim())
-    .filter(s => s);
+    .map((s) => s.trim())
+    .filter((s) => s)
 }
 
 let engList = extract(`
@@ -17,7 +19,7 @@ Hate speech
 Terrorism
 Copyright infringement
 Other (please specify)
-`);
+`)
 let zhList = extract(`
 裸露或色情
 暴力
@@ -30,32 +32,33 @@ let zhList = extract(`
 恐怖主義
 侵犯版權
 其他 (請列明)
-`);
-let codes = engList.map(reason => reason.split('(')[0].trim());
+`)
+let codes = engList.map((reason) => reason.split('(')[0].trim())
 type Reason = {
-  Code: string;
-  Eng: string;
-  Zh: string;
-};
+  Code: string
+  Eng: string
+  Zh: string
+}
 let reasons: Reason[] = codes.map((code, i) => ({
   Code: code,
   Eng: engList[i],
   Zh: zhList[i],
-}));
-`
+}))
+;`
 /**
  * Referenced the complain reason list on Facebook
  * */
 
-export type ReasonCodeType =${reasons.map(x => `\n  | '${x.Code}'`).join('')}
-;
+${genUnionType('ReasonCodeType', codes)}
+
+export const ReasonCodeTypes: ReasonCodeType[] = ${genArray(codes)}
 
 export type ReasonType = {
   Code: ReasonCodeType
   Eng: string
   Zh: string
   Remark?: string
-};
+}
 
-export let reasons = ${JSON.stringify(reasons, null, 2)};
-`.trim();
+${genArray('reasons', reasons)}
+`.trim()
