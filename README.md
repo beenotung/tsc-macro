@@ -61,16 +61,16 @@ export const colors: Color[] = [
 
 ## Installation
 ```bash
-npm i -g tsc-macro
+npm i -D tsc-macro
 ```
 
 ## Transpile
 ```bash
 ## recursively in the current directory
-tsc-macro
+npx tsc-macro
 
 ## recursively in given directory
-tsc-macro src/models
+npx tsc-macro src/models
 ```
 
 ## License
