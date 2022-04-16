@@ -2,9 +2,7 @@
  * Referenced the complain reason list on Facebook
  * */
 
-import { alias, def } from './api-stub';
-
-export let ReasonCodeType = `
+export type ReasonCodeType =
   | 'Nudity or pornography'
   | 'Violence'
   | 'Harassment'
@@ -16,19 +14,14 @@ export let ReasonCodeType = `
   | 'Terrorism'
   | 'Copyright infringement'
   | 'Other'
-`;
-const { type, typeArray } = alias({
-  ReasonCodeType,
-});
-export let ReasonType = `{
-  Code: ${type(ReasonCodeType)}
+;
+
+export type ReasonType = {
+  Code: ReasonCodeType
   Eng: string
   Zh: string
   Remark?: string
-}`;
-alias({
-  ReasonType,
-});
+};
 
 export let reasons = [
   {
@@ -87,6 +80,3 @@ export let reasons = [
     "Zh": "其他 (請列明)"
   }
 ];
-def({
-  reasons: { type: typeArray(ReasonType), value: reasons },
-});

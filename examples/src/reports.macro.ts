@@ -47,25 +47,15 @@ let reasons: Reason[] = codes.map((code, i) => ({
  * Referenced the complain reason list on Facebook
  * */
 
-import { alias, def } from './api-stub';
+export type ReasonCodeType =${reasons.map(x => `\n  | '${x.Code}'`).join('')}
+;
 
-export let ReasonCodeType = \`${reasons.map(x => `\n  | '${x.Code}'`).join('')}
-\`;
-const { type, typeArray } = alias({
-  ReasonCodeType,
-});
-export let ReasonType = \`{
-  Code: \${type(ReasonCodeType)}
+export type ReasonType = {
+  Code: ReasonCodeType
   Eng: string
   Zh: string
   Remark?: string
-}\`;
-alias({
-  ReasonType,
-});
+};
 
 export let reasons = ${JSON.stringify(reasons, null, 2)};
-def({
-  reasons: { type: typeArray(ReasonType), value: reasons },
-});
 `.trim();
