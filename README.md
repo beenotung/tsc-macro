@@ -8,18 +8,53 @@ Compose macro in Typescript, expand back into Typescript
 tsc-macro evaluates each `[name].macro.ts` file and save the result to corresponding `[name].ts`
 
 ## Example
-Source file: fruit.macro.ts
+Source file: `fruit.macro.ts`
 ```typescript
-import { genEnum } from 'tsc-macro/helpers/enum'
+import { genEnum } from 'tsc-macro'
 
-genEnum('fruit', ['apple', 'orange']);
+genEnum('fruit', ['apple', 'orange'])
 ```
-Generated file: fruit.ts
+Generated file: `fruit.ts`
 ```typescript
 export enum fruit {
   apple,
   orange,
 }
+```
+
+A more flexible example: `color.macro.ts`
+```typescript
+import { genArray, genUnionType } from 'tsc-macro'
+
+let colors = ['red', 'green', 'blue']
+
+;`
+${genUnionType('Color', colors)}
+
+${genArray('values', colors)}
+
+export const colors: Color[] = ${genArray(colors)}
+`.trim()
+```
+
+Generated into `color.ts`
+```typescript
+export type Color =
+  | 'red'
+  | 'green'
+  | 'blue'
+
+export const values = [
+  'red',
+  'green',
+  'blue',
+]
+
+export const colors: Color[] = [
+  'red',
+  'green',
+  'blue',
+]
 ```
 
 [More Examples](./examples)
